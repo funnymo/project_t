@@ -1,17 +1,17 @@
 .log_in_div {
     position: center;
     width: 100%;
-    margin-left: 30%;
-    margin-top: 10%;
+    margin-left: 12%;
+    margin-top: 20%;
 }
 
 h2.log_in {
-    color: rgba(125, 123, 121, 0.74);
+    color: black;
 }
 
 input#user_email {
     outline: none;
-    background: transparent;
+    background: rgba(69, 76, 73, 0.13);
     border-style: solid;
     border-color: rgba(240, 243, 240, 0.27);
     border-top: none;
@@ -22,7 +22,7 @@ input#user_email {
 }
 
 input#user_password {
-    background: transparent;
+    background: rgba(69, 76, 73, 0.13);
     border-style: solid;
     border-color: rgba(240, 243, 240, 0.27);
     border-top: none;
@@ -33,7 +33,7 @@ input#user_password {
 }
 
 input[type="submit"] {
-    color: #9A432F;
+    color: #8C8988;
     background: transparent;
     border: solid;
     border-bottom-width: medium;

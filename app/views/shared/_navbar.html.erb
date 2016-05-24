@@ -4,22 +4,20 @@
   <div class="menu-wrap">
     <h1 class="logo"><a href="/">Project T</a></h1>
     <i class="icon-remove menu-close"></i>
-    <a href="#home">FIND</a>
+    <!-- <a href="#home">FIND</a> -->
     <% if(!user_signed_in?) %>
     <%= link_to "Log In", new_user_session_path %>
     <%= link_to "Sign Up", new_user_registration_path %>
     <%= link_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook) %>
     <% else %>
-    <%= image_tag avatar_url(current_user), class: "img-circle avatar-small" %>&nbsp;
-    <%= current_user.fullname %> <span class="caret"></span></a>
+    <a href="/users/<%=current_user.id%>"><%="#{current_user.fullname}"%></a>
     <%= link_to "Edit Profile", edit_user_registration_path %>
     <%= link_to "Log Out", destroy_user_session_path, method: :delete %>
     <% end %>
-    <a href="#services">Profile</a>
-    <a href="#portfolio">About US</a>
-    <a href="#about">About</a>
+    <a href="#portfolio">Store</a>
+    <a href="#about">About Us</a>
     <a href="#contact">Contact</a>
-    <a href="#contact">Sign </a>
+    <a href="#contact"></a>
     <a href="#"><i class="icon-facebook"></i></a>
     <a href="#"><i class="icon-twitter"></i></a>
     <a href="#"><i class="icon-dribbble"></i></a>

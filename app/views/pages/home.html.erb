@@ -1,13 +1,14 @@
-<!-- <h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p> -->
+<div class="bkpic">
+<% if current_admin %>
+  <%= render 'admin/home' %>
+<% else %>
 
+    <br>
 
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br>
+
+    <div class="logo_pic">
+    </div>
     <h1 class="title">TRAIL</h1>
 
 <!-- form to search specific user code -->
@@ -52,3 +53,6 @@
 	<!-- <script src="/assets/javascript/main.js"></script> -->
   <!-- <script type="text/javascript">sc_project=3231500; sc_invisible=1; sc_partition=35; sc_security="2ff72137";</script>
   <script type="text/javascript" src="http://www.statcounter.com/counter/counter_xhtml.js"></script> -->
+
+  <% end %>
+</div>

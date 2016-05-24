@@ -1,11 +1,13 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import "toastr";
 @import "font-awesome.min";
 @import "home";
+
 @import "log_in";
 @import "sign_up";
 
-@import "toastr";
+
 
 .avatar-small {
   width: 28px;
@@ -18,4 +20,15 @@
 }
 .avatar-full {
   width: 100%
+}
+
+.bkpic{
+  position: absolute;
+  background-image: url('photo2.jpg');
+  z-index:-5;
+  left:0%;
+  background-size:cover;
+  min-width: 100%;
+  min-height: 100%;
+
 }

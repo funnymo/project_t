@@ -17,6 +17,7 @@ gem 'omniauth-facebook'
 
 # Notifications
 gem 'toastr-rails'
+gem 'jquery-turbolinks'
 
 gem 'paperclip'
 
