@@ -10,7 +10,11 @@ Rails.application.routes.draw do
               :sign_out => "logout",
               :edit => "profile"}
 
-  resources :users, only: [:show]
+  resources :users, only: [:show] do
+    member do 
+      get :confirm_email
+    end
+  end
   resources :products
   resources :product_photos
 
