@@ -1,26 +1,14 @@
-<!-- <div class="cover-card col-md-1">
-</div> -->
+<h2>Products</h2>
 
-<!-- <div class="cover-card col-lg-10"> -->
-
-  <!-- <div class="store_products"> -->
-
-
-  <i class="fa fa-shopping-cart fa-4 pull-right"></i>
-
-  <br>
-  <br>
-  <br>
-  <div class="section group">
-    <% @product_photos.each do |x| %>
-      <div class="col span_1_of_3">
-        <%= image_tag x.image.url() %>
-      </div>
-    <%end%>
-  </div>
-  <!-- </div> -->
-
-<!-- </div> -->
-<!--
-<div class="cover-card col-md-1">
-</div> -->
+<% @products.each do |category, products| %>
+  <h3><%= category.name %></h3>
+  <ul>
+    <% products.each do |product| %>
+    <li>
+      <h4><%= link_to product.name, product_path(product.permalink) %></h4>
+      <p><%= product.short_description %></p>
+      <p><b>Price:</b> <%= number_to_currency product.price %></p>
+    </li>
+    <% end %>
+  </ul>
+<% end %>

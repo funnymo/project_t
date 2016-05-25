@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
 
+  mount Shoppe::Engine => "/shoppe"
   devise_for :admins
-  root 'pages#home'
+  # root 'pages#home'
 
   devise_for  :users,
               :path => "",
@@ -11,7 +12,7 @@ Rails.application.routes.draw do
               :edit => "profile"}
 
   resources :users, only: [:show]
-  resources :products
+  # resources :products
   resources :product_photos
 
 
@@ -23,5 +24,15 @@ Rails.application.routes.draw do
     resources :messages, only: [:index, :create]
   end
 
+  get "product/:permalink", to: "products#show", as: "product"
+  post "product/:permalink", to: "products#buy", as: "buy"
+  post "product/:permalink", to: "products#buy"
+  root to: "products#index"
+  get "basket", to: "orders#show"
+  delete "basket", to: "orders#destroy"
+
+  match "checkout", to: "orders#checkout", as: "checkout", via: [:get, :patch]
+  match "checkout/pay", to: "orders#payment", as: "checkout_payment", via: [:get, :post]
+  match "checkout/confirm", to: "orders#confirmation", as: "checkout_confirmation", via: [:get, :post]
 
 end

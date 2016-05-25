@@ -27,6 +27,9 @@ gem 'paperclip'
 gem 'private_pub'
 gem 'thin'
 
+# Store
+gem 'shoppe'
+
 group :development, :test do
   gem 'byebug'
 end
