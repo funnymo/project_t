@@ -2,7 +2,7 @@
 class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
-    devise :database_authenticatable, :registerable,
+    devise :database_authenticatable, :registerable, :confirmable,
          :recoverable, :rememberable, :trackable, :validatable
     devise :omniauthable, :omniauth_providers => [:facebook]
     validates :fullname, presence: true, length: {maximum: 50}
@@ -13,7 +13,6 @@ class User < ActiveRecord::Base
     has_many :photos
     has_many :transactions
 
-    devise :registerable, :confirmable
     before_create :confirmation_token
 
     has_attached_file :avatar, styles: { medium: "300x300>", thumb: "50x50#", profile: '200x200>' }, default_url: nil
