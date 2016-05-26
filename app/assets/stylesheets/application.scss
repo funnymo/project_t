@@ -8,7 +8,7 @@
 @import "sign_up";
 @import "about_us";
 @import "profile";
-
+@import "edit_profile";
 
 
 .avatar-small {
@@ -22,6 +22,10 @@
 }
 .avatar-full {
   width: 100%
+}
+
+hr.nav_bar {
+    width: 90%;
 }
 
 .bkpic{

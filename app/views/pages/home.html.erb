@@ -11,15 +11,28 @@
     </div>
     <h1 class="title">TRAIL</h1>
 
+
+
+    <%= form_tag("/search", method: "get") do %>
+      <%= label_tag(params[:code], "Search for:") %>
+      <%= text_field_tag :code %>
+      <%= submit_tag("Search") %>
+    <% end %>
+
+
 <!-- form to search specific user code -->
   <div class="search">
     <form action="/" method="post" id='code' class="front">
 	     <input type ="text" name ="user_code" placeholder="CODE" id="changeinputbox">
 	      <input type="submit" value="TRAIL" id="submit_code" style="padding-bottom: 1px; padding-top: 1px;">
     </form>
-  </div>  
+  </div>
 
-  <div class="background-wrap">   
+
+
+  <div class="background-wrap">
+
+
   </div>
 
 
@@ -50,3 +63,7 @@
 
   <% end %>
 </div>
+
+
+<script>
+</script
