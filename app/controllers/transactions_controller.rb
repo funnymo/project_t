@@ -1,3 +1,5 @@
+require 'SecureRandom'
+
 class TransactionsController < ApplicationController
   before_action :authenticate_user!, except: [:notify]
 
@@ -12,12 +14,12 @@ class TransactionsController < ApplicationController
           business: 'mky.wee-facilitator@gmail.com',
           cmd: '_xclick',
           upload: 1,
-          notify_url: 'http://localhost:3000/notify',
+          notify_url: 'http://4302fb42.ngrok.io/notify',
           amount: @transaction.price,
           item_name: @transaction.product.product_name,
           item_number: @transaction.id,
           quantity: '1',
-          return: 'http://localhost:3000'
+          return: 'http://4302fb42.ngrok.io'
         }
 
         redirect_to "https://www.sandbox.paypal.com/cgi-bin/webscr?" + values.to_query
@@ -33,8 +35,18 @@ class TransactionsController < ApplicationController
     status = params[:payment_status]
     transaction = Transaction.find(params[:item_number])
     if status == "Completed"
-      #user generate code
-      transaction.update_attributes status: true
+      flash[:alert] = "Transaction Complete!"
+      @user = transaction.user
+      if @user.premium false
+        if @user.code.nil?
+          @user.code = SecureRandom[0..5]
+          @user.save
+        else
+          @user.code
+        end
+      else
+        @user.code = "PREMIUM"
+      end
     else
       transaction.destroy
     end
