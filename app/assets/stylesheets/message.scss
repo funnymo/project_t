@@ -7,3 +7,33 @@
     background-color: cornflowerblue;
     color: azure;
 }
+
+
+@media (max-width: 991px) {
+  .col-md-8 {
+      width: 100%;
+    }
+
+
+}
+
+
+.panel-heading.conversation {
+    background-color: #f85c37;
+    color: #072F2F;
+    text-align: center;
+    font-family: monospace;
+}
+
+.col-md-2.message {
+    color: black;
+    font-family: inherit;
+}
+
+.row.conversation.message:hover {
+    background-color: #FFD9BF;
+}
+
+.row.conversation.message {
+    border-radius: 10px;
+}
