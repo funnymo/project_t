@@ -1,0 +1,19 @@
+input#user_avatar {
+    color: #DA510D;
+}
+
+h2 {
+    color: #DA510D;
+}
+
+input#user_edit_fullname, input#user_edit_email, textarea#user_edit_description,
+input#user_phone_number, textarea#user_description, input#user_edit_new_password_confirmation,
+textarea#user_interest, input#user_edit_new_password {
+    background: rgba(69, 76, 73, 0.13);
+    border-style: solid;
+    border-color: rgba(240, 243, 240, 0.27);
+    border-top: none;
+    border-left: none;
+    border-right: none;
+        width: 100%;
+}

@@ -26,8 +26,12 @@ Rails.application.routes.draw do
     resources :messages, only: [:index, :create]
   end
 
+
+  get 'search', to: 'users#show'
+
   resources :products do
     resources :transactions, only: [:create]
   end
+
 
 end

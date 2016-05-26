@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  
+
   def create
     @user = User.new( user_params )
     @user.code = User.code_generator
@@ -11,7 +11,13 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:id])
+    @user = User.find_by(code: params[:code])
+    if @user.nil?
+      redirect_to "/"
+    else
+      @user.errors.full_messages
+    end
+
   end
 
   def update
@@ -29,7 +35,9 @@ class UsersController < ApplicationController
     params.require(:user).permit(:avatar)
   end
 
+
   def premium_params
     params.require(:user).permit(:code)
   end
+
 end
