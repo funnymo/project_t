@@ -146,6 +146,10 @@ ActiveRecord::Schema.define(version: 20160525162037) do
     t.string   "avatar_content_type"
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
+    t.string   "confirmation_token"
+    t.datetime "confirmed_at"
+    t.datetime "confirmation_sent_at"
+    t.string   "unconfirmed_email"
     t.string   "code"
     t.boolean  "premium"
   end

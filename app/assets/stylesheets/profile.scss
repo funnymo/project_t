@@ -180,3 +180,15 @@ p.profile_user_code {
 strong {
     background-color: rgba(44, 49, 49, 0.25);
 }
+
+a.btn.btn-primary-profile.wide {
+    background-color: transparent;
+    border-color: black;
+    color: black;
+}
+
+a.btn.btn-primary-profile.wide:hover {
+  background-color: rgba(0, 0, 0, 0.38);
+  border-color: #E0862E;
+  color: white;
+}

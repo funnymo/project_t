@@ -17,7 +17,6 @@ class UsersController < ApplicationController
     else
       @user.errors.full_messages
     end
-
   end
 
   def update
