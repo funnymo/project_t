@@ -13,7 +13,7 @@ class User < ActiveRecord::Base
     has_many :photos
     has_many :transactions
 
-    #devise :registerable, :confirmable
+    devise :registerable, :confirmable
     before_create :confirmation_token
 
     has_attached_file :avatar, styles: { medium: "300x300>", thumb: "50x50#", profile: '200x200>' }, default_url: nil
