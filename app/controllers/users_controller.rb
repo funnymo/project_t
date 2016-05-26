@@ -2,14 +2,18 @@ class UsersController < ApplicationController
 
 
   def show
-    @user = User.find_by(code: params[:code])
+    @user = User.find_by(code: params[:code]) || User.find(params[:id])
     if @user.nil?
       redirect_to "/"
-    else
-      @user.errors.full_messages
     end
-
   end
+  
+  def update
+    @user = User.find(params[:user_id])
+    @user.update(premium_params)
+    redirect_to @user
+  end
+
 
   private
 
