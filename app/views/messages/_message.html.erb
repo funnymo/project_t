@@ -1,12 +1,27 @@
-<div class="panel">
+<%if message.user == @other %>
+<div class="panel other">
   <div class="panel-body">
-    <%= image_tag avatar_url(message.user), class: "img-circle avatar-small" %>
-    <strong><%= message.user.fullname %></strong>
+    <strong class="message"><%= message.user.fullname %></strong>
 
-    <span class="pull-right"><%= message.message_time %></span>
+
     <br>
     <div class="row-space-2">
       <%= message.content %>
     </div>
+        <span class="pull-right message_time"><%= message.message_time %></span>
   </div>
 </div>
+<%else%>
+  <div class="panel mine">
+    <div class="panel-body">
+      <strong class="message"><%= message.user.fullname %></strong>
+
+
+      <br>
+      <div class="row-space-2">
+        <%= message.content %>
+      </div>
+      <span class="pull-right message_time"><%= message.message_time %></span>
+    </div>
+  </div>
+  <%end%>

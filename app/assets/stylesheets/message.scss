@@ -1,39 +1,46 @@
-.col-md-2.conversation {
+strong.message_head {
+    color: greenyellow;
+    font-family: 'Shadows Into Light', cursive;
+    font-size: 32px;
+}
+
+strong.message_head:hover {
+    color: #94A57A;
+  }
+
+textarea#message_content {
+    color: black !important;
 
 }
 
-
-.panel-heading.conversation {
-    background-color: cornflowerblue;
-    color: azure;
+a.btn.btn-default.wide.message {
+    background: rgba(255, 220, 220, 0);
+    color: white;
+    font-family: 'Shadows Into Light', cursive;
 }
 
-
-@media (max-width: 991px) {
-  .col-md-8 {
-      width: 100%;
-    }
-
-
+.panel.other {
+    width: 60%;
 }
 
+.panel.mine {
+    width: 60%;
+    margin-left: 40%
+  }
 
-.panel-heading.conversation {
-    background-color: #f85c37;
-    color: #072F2F;
-    text-align: center;
-    font-family: monospace;
-}
+  span.pull-right.message_time {
 
-.col-md-2.message {
-    color: black;
-    font-family: inherit;
-}
+  }
 
-.row.conversation.message:hover {
-    background-color: #FFD9BF;
-}
 
-.row.conversation.message {
-    border-radius: 10px;
-}
+
+// testing
+
+// .panel {
+//     background-color: transparent;
+//     border-color: white;
+// }
+//
+// strong.message {
+//     color: lightskyblue;
+// }
