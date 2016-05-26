@@ -6,7 +6,6 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
     devise :omniauthable, :omniauth_providers => [:facebook]
     validates :fullname, presence: true, length: {maximum: 50}
-    validates :code, uniqueness: true
 
     has_many :products
     has_many :galleries
@@ -29,7 +28,7 @@ class User < ActiveRecord::Base
     end
 
     def generate_code
-        self.code = (("A".."Z").to_a.sample(1) + (0..9).to_a.sample(4)).join
+        (("A".."Z").to_a.sample(1) + (0..9).to_a.sample(4)).join
     end
 
 
