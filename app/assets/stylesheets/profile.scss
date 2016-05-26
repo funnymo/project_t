@@ -171,10 +171,23 @@ p.profile_user_code {
     width: 33.33333333333333%;
 }
 }
+
 @media (min-width: 600px){
  .col-md-4{
     float: left;
   }
+
+
+  .col-md-4.profile{
+      border: solid;
+      border-radius: 10px;
+      margin-top: 6%;
+      background-color: #283758;
+      border-color: #283758;
+      box-shadow: wheat;
+      box-shadow: 0px 0px 23px rgb(0, 0, 0);
+  }
+
 }
 
 strong.profile {
@@ -192,3 +205,13 @@ a.btn.btn-primary-profile.wide:hover {
   border-color: #E0862E;
   color: white;
 }
+//
+// .col-md-4.profile{
+//     border: solid;
+//     border-radius: 10px;
+//     margin-top: 7%;
+//     background-color: #283758;
+//     border-color: #283758;
+//     box-shadow: wheat;
+//     box-shadow: 0px 0px 23px rgb(0, 0, 0);
+// }

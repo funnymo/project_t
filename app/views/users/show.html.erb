@@ -6,25 +6,23 @@
 
   </div>
 
-   <div class="col-md-4">
+   <div class="col-md-4 profile">
 
-     <br>
-     <br>
+
      <br>
      <br>
      <div class="center">
-
-
        <%= image_tag (@user.avatar? ? @user.avatar.url(:medium) : avatar_url(@user)), class: "user-avatar-full"%>
      </div>
-
+     <br>
+     <br>
      <h2 class="profile_user_fullname"><%= @user.fullname %></h2>
      <p class="profile_user_description"><%= @user.description %></p>
      <p class="profile_user_description"><%= @user.interest %></p>
 
      <p class="profile_user_code"><%= @user.code%></p>
    <%= link_to 'New', new_user_gallery_path(current_user), :class => 'btn btn-mini' %>
-  
+
 
      <p class="profile_icons_title"><strong class="profile">Trails:</strong></p>
      <div class="user_profile_icon">

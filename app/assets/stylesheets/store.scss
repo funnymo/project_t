@@ -17,6 +17,7 @@ img {
 
 }
 
+
 /*  COLUMN SETUP  */
 .col {
 	display: block;
@@ -54,4 +55,89 @@ i.fa.fa-shopping-cart.fa-4.pull-right {
 
 i.fa.fa-shopping-cart.fa-4.pull-right:hover {
     color: #F45A36;
+}
+
+.bkpic_store {
+    position: fixed;
+    background-image: url("white2.jpg");
+    z-index: -5;
+    left: 0%;
+    min-width: 100%;
+    min-height: 100%;
+  }
+
+
+// store header
+@import url(https://fonts.googleapis.com/css?family=Oswald);
+:root {
+  --primary-color: #ff3a29;
+  --secondary-color: #d4ebf0;
+  --tertiary-color: #1e2b2f;
+}
+
+body {
+// padding: 30px;
+// background-color: #fefefe;
+}
+  h1.store_header {
+    margin: 0 0 40px;
+    font: bold 80px/1.2 'Oswald', sans-serif;
+    text-transform: uppercase;
+    position: relative;
+    color: #fff;
+    box-decoration-break: clone;
+  }
+
+  h1.store_header:after {
+    position: absolute;
+    left: 0;
+    bottom: -20px;
+    content: " ";
+    width: 0;
+    height: 0;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-top: 20px solid var(--primary-color);
+  }
+
+  h1.store_header span {
+    display: inline-block;
+    padding: 10px 16px;
+    background: var(--primary-color);
+  }
+
+  a.product_name, .pull-right.price  {
+      color: black;
+      font-family: 'Abel', sans-serif;
+  }
+
+
+
+  img.cover-card.img-responsive.product:hover {
+  }
+//   img.cover-card.img-responsive.product:hover {
+//     background-color: rgba(6,6,6,0.3);
+// 	   color: white;
+// 	    text-shadow: 3px 3px 10px #000;
+//       font-family: 'Josefin Sans', sans-serif;;
+// }
+
+
+.panel.product {
+    margin-bottom: 20px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 4px;
+    -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+    box-shadow: 0px 0px 8px rgba(14, 8, 8, 0.31);
+}
+
+img.cover-card.img-responsive.product {
+    border: solid;
+    border-radius: 5px;
+    border-color: transparent;
+}
+
+.panel-default > .panel-heading {
+    background-color: rgb(255, 255, 255);
+    border-color: rgba(175, 175, 175, 0.37);
 }

@@ -11,6 +11,8 @@
 @import "edit_profile";
 @import "conversation";
 @import "message";
+@import "product";
+@import "contact_us";
 
 
 .avatar-small {
@@ -38,8 +40,9 @@ hr.nav_bar {
   background-size:cover;
   min-width: 100%;
   min-height: 100%;
-
 }
+
+
 .img-responsive {
   width: 100%;
 }
