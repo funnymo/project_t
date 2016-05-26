@@ -7,8 +7,8 @@ class User < ActiveRecord::Base
     devise :omniauthable, :omniauth_providers => [:facebook]
     validates :fullname, presence: true, length: {maximum: 50}
 
+    has_one :gallery
     has_many :products
-    has_many :galleries
     has_many :photos
     has_many :transactions
 
