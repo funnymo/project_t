@@ -2,18 +2,16 @@
 class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
-    devise :database_authenticatable, :registerable,
+    devise :database_authenticatable, :registerable, :confirmable,
          :recoverable, :rememberable, :trackable, :validatable
     devise :omniauthable, :omniauth_providers => [:facebook]
     validates :fullname, presence: true, length: {maximum: 50}
-    validates :code, uniqueness: true
 
+    has_one :gallery
     has_many :products
-    has_many :galleries
     has_many :photos
     has_many :transactions
 
-    #devise :registerable, :confirmable
     before_create :confirmation_token
 
     has_attached_file :avatar, styles: { medium: "300x300>", thumb: "50x50#", profile: '200x200>' }, default_url: nil
@@ -29,9 +27,25 @@ class User < ActiveRecord::Base
         end
     end
 
-    def generate_code
-        self.code = (("A".."Z").to_a.sample(1) + (0..9).to_a.sample(4)).join
+    # def generate_code
+    #     (("A".."Z").to_a.sample(1) + (0..9).to_a.sample(4)).join
+    # end
+    #
+    def generate
+        @user = User.find_by_id(id)
+        if @user.premium
+            # @code = #USERINPUT
+        else
+            @code = SecureRandom.hex[0..5]
+        end
+        @user.update_attributes code: @code
     end
 
+    #in transaction controller
+    def premium
+        @user = User.find_by_id(id) #current_user
+        @user.update_attributes premium: true
+        #run generate again
+    end
 
 end

@@ -29,6 +29,8 @@ Rails.application.routes.draw do
 
   get 'search', to: 'users#show'
 
+  post '/notify' => 'transactions#notify'
+
   resources :products do
     resources :transactions, only: [:create]
   end
