@@ -17,6 +17,9 @@ gem 'rmagick'
 gem 'carrierwave', github: 'carrierwaveuploader/carrierwave'
 gem 'omniauth-facebook'
 
+# contact_us
+# gem 'compass-rails'
+
 # Notifications
 gem 'toastr-rails'
 gem 'jquery-turbolinks'
@@ -35,4 +38,3 @@ group :development do
   gem 'web-console', '~> 2.0'
   gem 'spring'
 end
-

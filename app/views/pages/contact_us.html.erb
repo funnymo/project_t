@@ -1,96 +1,49 @@
-<div class="wrapper">
-  <div class="wheel closed">
-    <form onsubmit="return false;">
-      <ul>
-        <li>
-          <label class="sent-label">Thank You!</label>
-          <input placeholder="Hi there! Press Tab..." tabindex="1">
-        </li>
-        <li>
-          <input placeholder="This is," tabindex="2">
-        </li>
-        <li>
-          <input placeholder="a circular form!" tabindex="3">
-        </li>
-        <li>
-          <input placeholder="It lets you input data," tabindex="4">
-        </li>
-        <li>
-          <input placeholder="or just read a list," tabindex="5">
-        </li>
-        <li>
-          <input placeholder="through a path." tabindex="6">
-        </li>
-        <li>
-          <input placeholder="When ready," tabindex="7">
-        </li>
-        <li>
-          <input placeholder="press Enter to Send." tabindex="8">
-        </li>
-      </ul>
-      <input type="submit">
-    </form>
-  </div>
-</div>
+<div class="wrapper contact_us">
 
-<script>
-function setWheelRotation(rotation) {
-  $('.wheel').css('transform', 'rotate('+rotation+'deg)');
-}
+  	<h1 class="contact_us">contact the team</h1>
 
-function onSubmit() {
-  $('.wheel').addClass('sent');
-  setWheelRotation(697.5);
-  setTimeout(function() {
-    $('.wheel').removeClass('sent');
-    $('input').val('');
-    firstInputField().focus();
-  }, 5000);
-  return false;
-}
+    <div class="postcard">
 
-function firstInputField() {
-  return $('.wheel li:first-child > input');
-}
+    	<div class="inner-postcard-left">
 
-$('form').on('submit', function() {
-  onSubmit();
-});
+      	<h2 class="contact_us">Send us a message</h2>
 
-$('input').on('focus', function() {
-  var index = $(this).parent().index();
-  var rotation = -22.5 - (45 * index);
-  setWheelRotation(rotation);
-});
+        <form class="contact_us">
 
-var lastTabIndex = $('[tabindex]').length;
+        	<input name="name" type="text" placeholder="First Name" class="contact_us">
+          <input name="name" type="text" placeholder="Last Name" class="contact_us">
+          <input name="name" type="text" placeholder="Email Address" class="contact_us">
+          <textarea name="message" placeholder="Your Message" class="contact_us"></textarea>
+          <input name="send" type="button" value="send" class="contact_us_submit">
 
-$('[tabindex]').on('keydown', function(event) {
-  if (event.keyCode == 9) { // Tab pressed
-    event.preventDefault();
-    var currentElement = $(this).get(0);
-    var curIndex = currentElement.tabIndex;
-    if (event.shiftKey) {
-      if (curIndex == 1) {
-        return;
-      } else {
-        curIndex--;
-      }
-    } else {
-      if (curIndex == lastTabIndex) {
-        return;
-      } else {
-        curIndex++;
-      }
-    }
+        </form>
 
-    $('[tabindex='+curIndex+']').focus();
-  }
-});
+      </div><!-- /.inner-postcard-left -->
 
-$(document).ready(function() {
-  $('.wheel').removeClass('closed');
-  firstInputField().focus();
-});
+      <div class="inner-postcard-right">
 
-</script>
+      	<div class="thumbnail contact_us">
+        	<p class="contact_us">please affix stamp here</p>
+        </div><!-- /.thumbnail -->
+
+				<div class="contactinfo">
+					<h2 class="contact_us">postcard</h2>
+          <p class="contact_us"> If you have a lot to say please feel free to ping us an email at <a class="contact_us" href="">trailproject4@gmail.com</a>.</p>
+          <p class="thanks">Thank You</p>
+        </div>
+
+      </div><!-- /.inner-postcard-right -->
+
+      <div class="address">
+      	<p><strong>NEXT Academy</strong> | Glomac Damansara| Jalan Damansara | Taman Tun Dr Ismail 60000 </p>
+      </div><!-- /.address -->
+
+    </div><!-- /.postcard -->
+
+
+
+
+<iframe src="https://www.google.com/maps/d/u/0/embed?mid=138KtD192reQKynTiNTUjuVdfgrI" width="640" height="480"></iframe>
+
+
+  </div><!-- /.wrapper -->
