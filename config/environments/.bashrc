@@ -1,3 +1,0 @@
-export SENDMAIL_PASSWORD=projectt
-export SENDMAIL_USERNAME=trailproject4@gmail.com
-export MAIL_HOST=localhost:3000
