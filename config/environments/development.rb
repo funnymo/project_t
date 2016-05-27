@@ -49,6 +49,6 @@ Rails.application.configure do
     address:       'smtp.gmail.com',
     port:          587,
     authentication: 'plain',
-    
+
   }
 end
