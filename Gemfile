@@ -15,10 +15,10 @@ gem 'bootstrap-sass'
 gem 'figaro'
 gem 'devise'
 gem 'rmagick'
+gem 'mini_magick'
 gem 'carrierwave', github: 'carrierwaveuploader/carrierwave'
 gem 'omniauth-facebook'
 
-gem 'rails_12factor'
 # , group: :production
 gem 'puma'
 
@@ -41,4 +41,8 @@ group :development do
   gem 'web-console', '~> 2.0'
   gem 'spring'
   # gem 'sqlite3'
+end
+
+group :production do
+    gem 'rails_12factor', '0.0.2'
 end
