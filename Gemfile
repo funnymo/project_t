@@ -41,3 +41,6 @@ group :development do
   # gem 'sqlite3'
 end
 
+group :production do
+    gem 'rails_12factor', '0.0.2'
+end
