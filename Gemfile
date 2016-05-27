@@ -17,7 +17,7 @@ gem 'devise'
 gem 'rmagick'
 gem 'carrierwave', github: 'carrierwaveuploader/carrierwave'
 gem 'omniauth-facebook'
-gem 'rails_12factor'
+# gem 'rails_12factor'
 # , group: :production
 gem 'puma'
 # Notifications
