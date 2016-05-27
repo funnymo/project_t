@@ -1,4 +1,4 @@
-require 'SecureRandom'
+require 'securerandom'
 
 class TransactionsController < ApplicationController
   before_action :authenticate_user!, except: [:notify]
