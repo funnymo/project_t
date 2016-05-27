@@ -1,0 +1,46 @@
+strong.message_head {
+    color: greenyellow;
+    font-family: 'Shadows Into Light', cursive;
+    font-size: 32px;
+}
+
+strong.message_head:hover {
+    color: #94A57A;
+  }
+
+textarea#message_content {
+    color: black !important;
+
+}
+
+a.btn.btn-default.wide.message {
+    background: rgba(255, 220, 220, 0);
+    color: white;
+    font-family: 'Shadows Into Light', cursive;
+}
+
+.panel.other {
+    width: 60%;
+}
+
+.panel.mine {
+    width: 60%;
+    margin-left: 40%
+  }
+
+  span.pull-right.message_time {
+
+  }
+
+
+
+// testing
+
+// .panel {
+//     background-color: transparent;
+//     border-color: white;
+// }
+//
+// strong.message {
+//     color: lightskyblue;
+// }

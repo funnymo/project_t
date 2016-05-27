@@ -175,8 +175,53 @@ p.profile_user_code {
  .col-md-4{
     float: left;
   }
+
+
+  .col-md-4.profile{
+      border: solid;
+      border-radius: 10px;
+      margin-top: 7%;
+      background-color: #283758;
+      border-color: #283758;
+      box-shadow: wheat;
+      box-shadow: 0px 0px 23px rgb(0, 0, 0);
+      margin-bottom: 7%;
+  }
+
 }
 
-strong {
+strong.profile {
     background-color: rgba(44, 49, 49, 0.25);
 }
+
+a.btn.btn-primary-profile.wide {
+    background-color: transparent;
+    border-color: black;
+    color: black;
+}
+
+form#new_transaction {
+    font-family: "Avenir";
+}
+
+a.btn.btn-primary-profile.wide:hover {
+  background-color: rgba(0, 0, 0, 0.38);
+  border-color: #E0862E;
+  color: white;
+}
+//
+// .col-md-4.profile{
+//     border: solid;
+//     border-radius: 10px;
+//     margin-top: 7%;
+//     background-color: #283758;
+//     border-color: #283758;
+//     box-shadow: wheat;
+//     box-shadow: 0px 0px 23px rgb(0, 0, 0);
+// }
+
+@media (min-width: 769px){
+// h2.product_name
+    // margin-left: -16%;
+    // width: 70%;
+  }

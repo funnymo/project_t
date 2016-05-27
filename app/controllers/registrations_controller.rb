@@ -24,19 +24,17 @@ class RegistrationsController < Devise::RegistrationsController
     end
   end
 
-
+	#
   protected
   def update_resource(resource, params)
     resource.update_without_password(params)
   end
-
+	#
   def sign_up_params
     params.require(:user).permit(:fullname, :email, :password, :password_confirmation, :code)
   end
-
+	#
   def account_update_params
     params.require(:user).permit(:avatar, :fullname, :phone_number, :description, :interest, :email, :password, :password_confirmation, :code, :image => [])
   end
 end
-
-

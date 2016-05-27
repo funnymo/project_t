@@ -16,31 +16,30 @@
 
     <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put, multipart: true }) do |f| %>
       <%= render 'shared/devisenotify' %>
-
-    <div>  <%= f.label :avatar %>
-      <%= f.file_field :avatar %>
+      <br>
+    <div>  <%= f.label :avatar %>: <%= f.file_field :avatar %>
     </div>
-
+        <br>
     <div class="field">
       <%= f.text_field :fullname, autofocus: true, :class => "form-control", :placeholder => "Full Name", :id => "user_edit_fullname" %>
     </div>
-
+        <br>
     <div class="field">
       <%= f.email_field :email, autofocus: true, :class => "form-control", :placeholder => "Email", :id => "user_edit_email" %>
     </div>
-
+    <br>
     <div class="field">
       <%= f.text_field :phone_number, autofocus: true, :class => "form-control", :placeholder => "Phone Number" %>
     </div>
-
+    <br>
     <div class="field">
       <%= f.text_area :description, rows: 5, cols: 25, autofocus: true, :class => "form-control", :placeholder => "Tell us about yourself", :id => "user_edit_description"%>
     </div>
-
+    <br>
     <div class="field">
       <%= f.text_area :interest, rows: 5, cols: 25, autofocus: true, :class => "form-control", :placeholder => "What are your interests?" %>
     </div>
-
+    <br>
     <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
       <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
     <% end %>
@@ -48,7 +47,7 @@
     <div class="field">
       <%= f.password_field :password, autocomplete: "off", placeholder: "New Password (Leave blank if you don't want to change it)", :class => "form-control", :id => "user_edit_new_password"%>
     </div>
-
+    <br>
     <div class="field">
       <%= f.password_field :password_confirmation, autocomplete: "off", placeholder: "Confirm New Password", :class => "form-control", :id => "user_edit_new_password_confirmation" %>
     </div>
@@ -57,8 +56,17 @@
     <div class="actions">
       <%= f.submit "Save" %>
     </div>
-
+        <br>
   <% end %>
+
+
+  <%= form_for [@user] do |form| %>
+     <%= render partial: '/users/form', object: form %>
+   <% end %>
+       <br>
+
+
+
 </div>
 
 <div class="col-md-4">

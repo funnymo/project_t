@@ -18,9 +18,10 @@ gem 'rmagick'
 gem 'mini_magick'
 gem 'carrierwave', github: 'carrierwaveuploader/carrierwave'
 gem 'omniauth-facebook'
-# gem 'rails_12factor'
+
 # , group: :production
 gem 'puma'
+
 # Notifications
 gem 'toastr-rails'
 gem 'jquery-turbolinks'

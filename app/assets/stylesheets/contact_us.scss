@@ -1,0 +1,181 @@
+@import url(http://fonts.googleapis.com/css?family=Roboto+Slab:400,300|Courgette);
+
+// body {
+//   margin: 0;
+//   color: #666;
+//   // font-family: 'Roboto Slab', serif;
+//   font-weight: 400;
+// }
+
+.wrapper.contact_us {
+  width: 960px;
+  margin: 50px auto;
+  overflow: hidden;
+}
+
+h1.contact_us,h2.contact_us {
+  font-weight: normal;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+h1.contact_us {
+  font-size: 22px;
+  text-align: center;
+  color: darkgoldenrod;
+  font-family: 'Roboto Slab', serif;
+  }
+
+h2.contact_us {
+  color: black;
+  margin: 0 0 15px 0;
+  font-size: 14px;
+  text-align: left;
+}
+
+  .postcard {
+    float: left;
+    width: 618px;
+    height: 336px;
+    border: 1px solid #ccc;
+    margin: 20px 10px;
+    background-color: rgb(212, 212, 212);
+  }
+  .inner-postcard-left {
+    float: left;
+    width: 268px;
+    border-right: 1px solid #ccc;
+    margin: 40px 0 30px 30px;
+  }
+  .inner-postcard-right {
+    float: right;
+    width: 269px;
+    margin: 40px 30px 30px 0;
+  }
+
+iframe {
+  float: right;
+  width: 298px;
+  height: 336px;
+  border: 1px solid #ccc;
+  margin: 20px 10px;
+}
+
+form.contact_us {
+  color: #333;
+}
+
+// input[type=text], textarea {
+//   width: 227px;
+//   padding: 5px;
+//   border: 1px solid #ccc;
+//   margin-bottom: 10px;
+//   font-family: 'Roboto Slab', serif;
+//   font-size: 10px;
+// }
+  // input[type=button] {
+  //   padding: 5px 8px;
+  //   border: 1px solid #ccc;
+  //   color: #333;
+  //   background-color: #fff;
+  //   font-family: 'Roboto Slab', serif;
+  //   font-size: 12px;
+  //   letter-spacing: 0.05em;
+  //   cursor: pointer;
+  //   text-transform: uppercase;
+  // }
+    // input[type=button]:hover {
+    //   background-color: #eaeaea;
+    // }
+
+.thumbnail.contact_us {
+  float: right;
+  width: 70px;
+  height: 80px;
+  border: 1px solid #ccc;
+}
+  .thumbnail > p {
+    font-size: 10px;
+    line-height: 1.6;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 0.3em;
+  }
+
+.contactinfo {
+  float: right;
+  width: 100%;
+  margin-top: 10px;
+}
+  .contactinfo p {
+    padding: 2px;
+    font-size: 12px;
+    line-height: 1.5;
+  }
+
+.thanks {
+  padding-bottom: 0;
+  font-family: 'Courgette', cursive;
+  font-size: 18px !important;
+}
+
+// img {
+//   display: block;
+//   max-width: 100%;
+// }
+
+.address {
+  width: 558px;
+  margin-left: 30px;
+  font-size: 10px;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.5em;
+  clear: both;
+}
+
+input.contact_us {
+    font-family: 'Roboto Slab', serif;
+    background-color: transparent;
+    border: none;
+    border-bottom: solid;
+    border-color: #B8860C;
+    margin-bottom: 2px;
+    border-width: thin;
+    color: black !important;
+    width: 70%;
+}
+
+textarea.contact_us:focus, input.contact_us:focus{
+    outline: none;
+}
+
+textarea.contact_us {
+    font-family: 'Roboto Slab', serif;
+    background-color: transparent;
+    border-color: #B98913;
+    margin-top: 5px;
+    height: 80px;
+    width: 85%;
+    color: black !important;
+}
+
+input.contact_us_submit {
+    padding: 5px 8px;
+    border: 1px solid #ccc;
+    color: #333;
+
+    font-family: 'Roboto Slab', serif;
+    font-size: 12px;
+    letter-spacing: 0.05em;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+a.contact_us {
+    color: black;
+}
+
+a.contact_us:hover {
+    color: #A59D9D;
+}

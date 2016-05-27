@@ -50,5 +50,6 @@ Rails.application.configure do
     port:          587,
     authentication: 'plain',
 
+
   }
 end
