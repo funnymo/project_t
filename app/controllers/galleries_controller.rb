@@ -93,7 +93,7 @@ class GalleriesController < ApplicationController
     @gallery.destroy
 
     respond_to do |format|
-      format.html { redirect_to user_galleries_url }
+      format.html { redirect_to @user }
       format.json { head :no_content }
     end
   end

@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20160526072324) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "admins", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
@@ -29,8 +32,8 @@ ActiveRecord::Schema.define(version: 20160526072324) do
     t.string   "fullname"
   end
 
-  add_index "admins", ["email"], name: "index_admins_on_email", unique: true
-  add_index "admins", ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
+  add_index "admins", ["email"], name: "index_admins_on_email", unique: true, using: :btree
+  add_index "admins", ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true, using: :btree
 
   create_table "codes", force: :cascade do |t|
     t.string   "url"
@@ -63,8 +66,8 @@ ActiveRecord::Schema.define(version: 20160526072324) do
     t.datetime "updated_at"
   end
 
-  add_index "messages", ["conversation_id"], name: "index_messages_on_conversation_id"
-  add_index "messages", ["user_id"], name: "index_messages_on_user_id"
+  add_index "messages", ["conversation_id"], name: "index_messages_on_conversation_id", using: :btree
+  add_index "messages", ["user_id"], name: "index_messages_on_user_id", using: :btree
 
   create_table "pictures", force: :cascade do |t|
     t.string   "description"
@@ -89,7 +92,7 @@ ActiveRecord::Schema.define(version: 20160526072324) do
     t.datetime "image_updated_at"
   end
 
-  add_index "product_photos", ["product_id"], name: "index_product_photos_on_product_id"
+  add_index "product_photos", ["product_id"], name: "index_product_photos_on_product_id", using: :btree
 
   create_table "products", force: :cascade do |t|
     t.string   "product_type"
@@ -107,8 +110,8 @@ ActiveRecord::Schema.define(version: 20160526072324) do
     t.datetime "updated_at"
   end
 
-  add_index "products", ["admin_id"], name: "index_products_on_admin_id"
-  add_index "products", ["user_id"], name: "index_products_on_user_id"
+  add_index "products", ["admin_id"], name: "index_products_on_admin_id", using: :btree
+  add_index "products", ["user_id"], name: "index_products_on_user_id", using: :btree
 
   create_table "transactions", force: :cascade do |t|
     t.integer  "user_id"
@@ -119,8 +122,8 @@ ActiveRecord::Schema.define(version: 20160526072324) do
     t.datetime "updated_at", null: false
   end
 
-  add_index "transactions", ["product_id"], name: "index_transactions_on_product_id"
-  add_index "transactions", ["user_id"], name: "index_transactions_on_user_id"
+  add_index "transactions", ["product_id"], name: "index_transactions_on_product_id", using: :btree
+  add_index "transactions", ["user_id"], name: "index_transactions_on_user_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -154,7 +157,17 @@ ActiveRecord::Schema.define(version: 20160526072324) do
     t.boolean  "premium"
   end
 
-  add_index "users", ["email"], name: "index_users_on_email", unique: true
-  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+
+  add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true, using: :btree
+  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
+  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
+
+  add_foreign_key "messages", "conversations"
+  add_foreign_key "messages", "users"
+  add_foreign_key "product_photos", "products"
+  add_foreign_key "products", "admins"
+  add_foreign_key "products", "users"
+  add_foreign_key "transactions", "products"
+  add_foreign_key "transactions", "users"
 
 end

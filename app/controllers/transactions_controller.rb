@@ -14,12 +14,12 @@ class TransactionsController < ApplicationController
           business: 'mky.wee-facilitator@gmail.com',
           cmd: '_xclick',
           upload: 1,
-          notify_url: 'http://4302fb42.ngrok.io/notify',
+          notify_url: 'http://35f32358.ngrok.io/notify',
           amount: @transaction.price,
           item_name: @transaction.product.product_name,
           item_number: @transaction.id,
           quantity: '1',
-          return: 'http://4302fb42.ngrok.io'
+          return: 'http://35f32358.ngrok.io'
         }
 
         redirect_to "https://www.sandbox.paypal.com/cgi-bin/webscr?" + values.to_query
