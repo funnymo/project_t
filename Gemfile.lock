@@ -158,8 +158,10 @@ GEM
       cocaine (~> 0.5.5)
       mime-types
       mimemagic (= 0.3.0)
+    pg (0.18.4)
     private_pub (1.0.3)
       faye
+    puma (3.4.0)
     rack (1.6.4)
     rack-test (0.6.3)
       rack (>= 1.0)
@@ -262,7 +264,9 @@ DEPENDENCIES
   jquery-turbolinks
   omniauth-facebook
   paperclip
+  pg
   private_pub
+  puma
   rails (= 4.2.6)
   rails_12factor
   rmagick
@@ -277,5 +281,8 @@ DEPENDENCIES
   unicorn
   web-console (~> 2.0)
 
+RUBY VERSION
+   ruby 2.2.4p230
+
 BUNDLED WITH
-   1.12.1
+   1.12.5
