@@ -30,9 +30,15 @@ input#btn_book_product {
     border-radius: 0px;
     background-color: #333333;
     color: white;
-    
+
 }
 
 a.product {
     color: black;
 }
+
+@media (min-width: 769px){
+// h2.product_name
+    // margin-left: -16%;
+    // width: 70%;
+  }
