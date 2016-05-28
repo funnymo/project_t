@@ -17,4 +17,5 @@
 //= require profile
 //= require turbolinks
 //= require bootstrap-sprockets
+//= require private_pub
 //= require_tree .
