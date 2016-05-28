@@ -27,8 +27,7 @@ class GalleriesController < ApplicationController
   # GET /galleries/new
   # GET /galleries/new.json
   def new
-    @gallery = Gallery.new
-
+    @user.gallery = Gallery.new
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @gallery }
@@ -44,7 +43,7 @@ class GalleriesController < ApplicationController
   # POST /galleries.json
   def create
     @gallery = Gallery.new(gallery_params)
-
+    @gallery.user_id = current_user
     respond_to do |format|
       if @gallery.save
 
@@ -107,7 +106,7 @@ class GalleriesController < ApplicationController
   def gallery_params
     params.require(:gallery).permit(:description,
                                     :name,
-                                    :pictures
+                                    :pictures,
                                    )
   end
 end

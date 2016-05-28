@@ -21,8 +21,14 @@
      <p class="profile_user_description"><%= @user.interest %></p>
 
      <p class="profile_user_code"><%= @user.code%></p>
-   <%= link_to 'New', new_user_gallery_path(current_user), :class => 'btn btn-mini' %>
-
+   
+    <%if @user.id == current_user.id && @user.gallery.nil?%>
+    <%= link_to 'New', new_user_gallery_path(current_user), :class => 'btn btn-mini' %>
+    <% elsif @user.gallery %>
+    <%= link_to 'View',user_gallery_path(@user, @user.gallery), :class => 'btn btn-mini' %>
+    <% else %>
+    <p>No gallery la</p>
+    <%end%>
 
      <p class="profile_icons_title"><strong class="profile">Trails:</strong></p>
      <div class="user_profile_icon">
