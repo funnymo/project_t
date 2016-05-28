@@ -1,32 +1,36 @@
 <div class="bkpic">
+
 <% if current_admin %>
   <%= render 'admin/home' %>
 <% else %>
 
 
+    <br><br><br><br><br><br><br><br>
 
-    <br><br><br><br><br><br><br><br><br>
-
-    <div class="logo_pic">
+<div class="container home_page">
+  <div class="row">
+    <div class="col-md-offset-4 col-md-4 home_logo">
+      <%=image_tag src="TrailLogo5.png", class:"logo_home"%>
     </div>
-    <h1 class="title">TRAIL</h1>
+  </div>
+</div>
 
 
-
-    <%= form_tag("/search", method: "get") do %>
-      <%= label_tag(params[:code], "Search for:") %>
-      <%= text_field_tag :code %>
-      <%= submit_tag("Search") %>
-    <% end %>
+    <!-- <%= form_tag("/search", method: "get", class:"search home") do %>
+      <%= text_field_tag :code, nil, {type: "search"} %>
+      <%= submit_tag("Search", :id=>"button", :class=>"home", :name=>"submit") %>
+    <% end %> -->
 
 
 <!-- form to search specific user code -->
-  <div class="search">
-    <form action="/" method="post" id='code' class="front">
-	     <input type ="text" name ="user_code" placeholder="CODE" id="changeinputbox">
-	      <input type="submit" value="TRAIL" id="submit_code" style="padding-bottom: 1px; padding-top: 1px;">
-    </form>
-  </div>
+<%= form_tag "/search", method:"get", id:"code_form", class:"search home" do %>
+  <%= text_field_tag :code, nil, type: "search", placeholder: "Search" %>
+  <button class='search-btn'>
+    <span class="fa fa-rocket"></span>
+  </button>
+<% end %>
+
+
 
 
 
@@ -46,8 +50,13 @@
         </div>
       </div>
     </div>
+
   </div>
-    <!-- <a class="axbtn animated fadeIn" href="http://3oneseven.com/about/">Find out more</a> -->
+
+
+
+
+</div>
 
 
 
@@ -61,9 +70,24 @@
   <!-- <script type="text/javascript">sc_project=3231500; sc_invisible=1; sc_partition=35; sc_security="2ff72137";</script>
   <script type="text/javascript" src="http://www.statcounter.com/counter/counter_xhtml.js"></script> -->
 
-  <% end %>
-</div>
-
 
 <script>
-</script
+
+// https://dribbble.com/shots/2308755-Search-Transform-Principle-Freebie
+$('form').on('click', '.search-btn' ,function(e) {
+  e.preventDefault();
+  $('#code_form').addClass('opened');
+  $('input[type="search"]').focus();
+  $(this).unbind('click');
+  $('form > button').removeClass();
+});
+
+$('input[type="search"]').on('focusout', function(e) {
+  $('form').removeClass('opened');
+  $('form > button').addClass('search-btn');
+});
+
+</script>
+
+  <% end %>
+</div>

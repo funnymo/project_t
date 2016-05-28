@@ -6,7 +6,7 @@ class UsersController < ApplicationController
       redirect_to "/"
     end
   end
-  
+
   def update
     @user = User.find(params[:user_id])
     @user.update(premium_params)

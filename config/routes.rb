@@ -28,7 +28,7 @@ Rails.application.routes.draw do
   end
 
 
-  get 'search', to: 'users#show'
+  get '/search', to: 'users#show'
 
   post '/notify' => 'transactions#notify'
 
