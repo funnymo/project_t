@@ -1,11 +1,12 @@
 <div class="container text-center">
-  <div class="row">
-    <h4>GO PREMIUM</h4>
+  <div class="row" style="color:white">
+    <h2>GO PREMIUM</h2>
+    <p>A <strong>FREE</strong> Premium T-Shirt with your customized code will be on your doorstep soon if you choose to go premium!</p>
+    <p>Key in your code below.</p>
   </div>
 
   <div class="row">
-    <%= form_for [current_user], url: "/products", html: {multipart: true}  do |form| %>
-      <%= render partial: '/users/form', object: form %>
-    <% end %>
+
+    <%= render 'users/form' %>
   </div>
 </div>
