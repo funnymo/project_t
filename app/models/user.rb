@@ -31,21 +31,21 @@ class User < ActiveRecord::Base
     #     (("A".."Z").to_a.sample(1) + (0..9).to_a.sample(4)).join
     # end
     #
-    def generate
-        @user = User.find_by_id(id)
-        if @user.premium
-            # @code = #USERINPUT
-        else
-            @code = SecureRandom.hex[0..5]
-        end
-        @user.update_attributes code: @code
-    end
+    # def generate
+    #     @user = User.find_by_id(id)
+    #     if @user.premium
+    #         # @code = #USERINPUT
+    #     else
+    #         @code = SecureRandom.hex[0..5]
+    #     end
+    #     @user.update_attributes code: @code
+    # end
 
-    #in transaction controller
-    def premium
-        @user = User.find_by_id(id) #current_user
-        @user.update_attributes premium: true
-        #run generate again
-    end
+    # #in transaction controller
+    # def premium
+    #     @user = User.find_by_id(id) #current_user
+    #     @user.update_attributes premium: true
+    #     #run generate again
+    # end
 
 end

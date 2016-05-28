@@ -15,11 +15,10 @@ Rails.application.routes.draw do
     resources :pictures
   end
 
-  resources :products
   resources :product_photos
 
   patch "/users/:user_id" => "users#update"
-
+  patch "/products" => "products#index"
   get "/about_us" => "pages#about_us"
   get "/trail_upgrade" => "pages#upgrade"
   get "/contact_us" => "pages#contact_us"
