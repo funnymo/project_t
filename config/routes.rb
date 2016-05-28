@@ -21,6 +21,7 @@ Rails.application.routes.draw do
   patch "/users/:user_id" => "users#update"
 
   get "/about_us" => "pages#about_us"
+  get "/trail_upgrade" => "pages#upgrade"
   get "/contact_us" => "pages#contact_us"
 
   resources :conversations, only: [:index, :create] do
