@@ -283,7 +283,7 @@ a:after {
 	width: 260px;
 	height: 100%;
 	top: 0;
-	z-index: 10;
+	z-index: 1000;
 	text-align: left;
 }
 
@@ -484,5 +484,3 @@ input[type="submit"] {
     font-size: 15;
 
     }*/
-
-    
