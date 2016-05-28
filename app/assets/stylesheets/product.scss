@@ -6,7 +6,6 @@
 }
 
 h2.product_name {
-
 padding:20px;
 display:block;
 background-color:#333;
@@ -41,4 +40,22 @@ a.product {
 // h2.product_name
     // margin-left: -16%;
     // width: 70%;
-  }
+}
+
+
+ul.nav.nav-tabs {
+    margin-top: 10px;
+}
+
+@media (max-width: 835px) {
+.panel.panel-default.product {
+    width: 90%;
+    margin-left: 5%;
+}
+
+h2.product_name {
+    margin-left: -15.5%;
+}
+
+}
+// testing the size selection

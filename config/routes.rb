@@ -28,8 +28,12 @@ Rails.application.routes.draw do
     resources :messages, only: [:index, :create]
   end
 
+
+
+  get '/search', to: 'users#show'
+
   get "/premium" => "premium_transactions#create"
-  get 'search', to: 'users#show'
+
 
   post '/notify' => 'transactions#notify'
   post '/notifypremium' => 'premium_transactions#notifypremium'
