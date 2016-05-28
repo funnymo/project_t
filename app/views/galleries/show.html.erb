@@ -13,10 +13,14 @@
     <%= @gallery.description %>
   </p>
 
+
+ 
   <div class="form-actions">
     <%= link_to 'Back', @user, :class => 'btn btn-mini'  %>
+    <%if @user.id == current_user.id %>
     <%= link_to 'Edit Album', edit_user_gallery_path(current_user.id,@gallery), :class => 'btn btn-mini' %>
     <%= link_to 'Delete Album', user_gallery_path(current_user.id,@gallery), :method => 'delete', :confirm => 'Are you sure?', :class => 'btn btn-mini' %>
+    <%end%>
   </div>
 
 <h2>Pictures</h2>
@@ -31,6 +35,8 @@
       <%= image_tag pic.image.url %>
       <div class="caption">
         <p style="text-align: center;">
+
+        <%if @user.id == current_user.id %>
         <%= link_to "Edit picture", edit_user_picture_path(@user.id,pic) %>
 
         <%=
@@ -38,6 +44,7 @@
             :data => { :confirm => "Are you sure?" },
             :method => :delete
           %>
+        <%end%>
 
         </p>
       </div>
