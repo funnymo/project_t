@@ -1,6 +1,14 @@
 class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
+<<<<<<< Updated upstream
+=======
+<<<<<<< HEAD
+=======
+   
+>>>>>>> origin/debugger
+  end
+>>>>>>> Stashed changes
 
   def update
     @user = User.find(params[:user_id])
