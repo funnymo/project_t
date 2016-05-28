@@ -22,6 +22,7 @@ Rails.application.routes.draw do
 
   get "/about_us" => "pages#about_us"
   get "/trail_upgrade" => "pages#upgrade"
+  get "/contact_us" => "pages#contact_us"
 
   resources :conversations, only: [:index, :create] do
     resources :messages, only: [:index, :create]

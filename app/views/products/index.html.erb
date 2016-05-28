@@ -1,23 +1,16 @@
-<!-- <div class="cover-card col-md-1">
-</div> -->
-
-<!-- <div class="cover-card col-lg-10"> -->
-
-  <!-- <div class="store_products"> -->
+<div class="bkpic_store">
+</div>
 
 
+<br><br>
+<br>
+<h1 class="store_header"><span>SHOP TILL YOU LEAVE YOUR TRAIL
+</span></h1>
 
-  <!-- </div> -->
-
-<!-- </div> -->
-<!--
-<div class="cover-card col-md-1">
-</div> -->
 
 <div class="row">
   <div class="text-center">
-    <h2>Just for the weekend</h2>
-    <p>Discover new, inspiring people to trail.</p>
+
   </div>
 </div>
 
@@ -26,13 +19,13 @@
 <div class="row">
   <% @products.each do |product| %>
     <div class="col-md-4 col-sm-6">
-      <div class="panel panel-default">
+      <div class="panel panel-default product">
         <div class="panel-heading preview">
-          <%= image_tag product.product_photos[0].image.url(:medium), class: "img-responsive" if product.product_photos.length >0 %>
+          <%= image_tag product.product_photos[0].image.url(:medium), class: "cover-card img-responsive product" if product.product_photos.length >0 %>
         </div>
-        <div class="panel-body">
-          <%= link_to product.product_name, product %>
-          <div class="pull-right">$<%= product.price %></div>
+        <div class="panel-body product">
+          <%= link_to product.product_name, product, class: "product_name"%>
+          <div class="pull-right price">$<%= product.price %></div>
         </div>
       </div>
     </div>
