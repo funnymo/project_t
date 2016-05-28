@@ -19,8 +19,9 @@ Rails.application.routes.draw do
   resources :product_photos
 
   patch "/users/:user_id" => "users#update"
-
+  patch "/products" => "products#index"
   get "/about_us" => "pages#about_us"
+  get "/trail_upgrade" => "pages#upgrade"
   get "/contact_us" => "pages#contact_us"
 
   resources :conversations, only: [:index, :create] do
@@ -28,13 +29,21 @@ Rails.application.routes.draw do
   end
 
 
+
   get '/search', to: 'users#show'
 
+  get "/premium" => "premium_transactions#create"
+
+
   post '/notify' => 'transactions#notify'
+  post '/notifypremium' => 'premium_transactions#notifypremium'
 
   resources :products do
     resources :transactions, only: [:create]
   end
 
+  resources :users do
+    resources :premium_transactions, only: [:create]
+  end
 
 end

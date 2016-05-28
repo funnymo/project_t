@@ -17,6 +17,7 @@
      </div> -->
 
 
+
        <div class="center">
          <%= image_tag (@user.avatar? ? @user.avatar.url(:medium) : avatar_url(@user)), class: "user-avatar-full"%>
        </div>
@@ -25,9 +26,15 @@
        <h2 class="profile_user_fullname"><%= @user.fullname %></h2>
        <p class="profile_user_description"><%= @user.description %></p>
        <p class="profile_user_description"><%= @user.interest %></p>
+     <p class="profile_user_code"><%= @user.code%></p>
 
-       <p class="profile_user_code"><%= @user.code%></p>
-       <%= link_to 'New', new_user_gallery_path(current_user), :class => 'btn btn-mini' %>
+    <%if @user.id == current_user.id && @user.gallery.nil?%>
+    <%= link_to 'New', new_user_gallery_path(current_user), :class => 'btn btn-mini' %>
+    <% elsif @user.gallery %>
+    <%= link_to 'View',user_gallery_path(@user, @user.gallery), :class => 'btn btn-mini' %>
+    <% else %>
+    <p>No gallery la</p>
+    <%end%>
 
 
        <p class="profile_icons_title"><strong class="profile">Trails:</strong></p>
@@ -44,10 +51,6 @@
          <i class="fa fa-tripadvisor" aria-hidden="true"></i>
          <i class="fa fa-linkedin" aria-hidden="true"></i>
          <i class="fa fa-instagram" aria-hidden="true"></i>
-
-
-
-
 
          <% if current_user != @user %>
           <div class="row-space-2">

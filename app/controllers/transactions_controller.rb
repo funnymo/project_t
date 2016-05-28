@@ -1,5 +1,4 @@
 require 'securerandom'
-
 class TransactionsController < ApplicationController
   before_action :authenticate_user!, except: [:notify]
 
@@ -39,13 +38,13 @@ class TransactionsController < ApplicationController
       @user = transaction.user
       if @user.premium false
         if @user.code.nil?
-          @user.code = SecureRandom[0..5]
-          @user.save
+          @standardcode = SecureRandom.hex[0..5]
+          @user.update_attributes code: @standardcode
         else
           @user.code
         end
       else
-        @user.code = "PREMIUM"
+        @user.code
       end
     else
       transaction.destroy
