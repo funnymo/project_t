@@ -6,8 +6,7 @@
   <br>
   <br>
   <br>
-
-  <h2>Edit <%= resource_name.to_s.humanize %></h2>
+  <h2>Edit Profile</h2>
     <% if resource && resource.errors %>
       <% resource.errors.full_messages.each do |error| %>
         <%= error %>
@@ -19,11 +18,11 @@
       <br>
     <div>  <%= f.label :avatar %>: <%= f.file_field :avatar %>
     </div>
-        <br>
+    <br>
     <div class="field">
       <%= f.text_field :fullname, autofocus: true, :class => "form-control", :placeholder => "Full Name", :id => "user_edit_fullname" %>
     </div>
-        <br>
+    <br>
     <div class="field">
       <%= f.email_field :email, autofocus: true, :class => "form-control", :placeholder => "Email", :id => "user_edit_email" %>
     </div>
