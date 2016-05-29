@@ -1,7 +1,6 @@
 class UsersController < ApplicationController
 
   def show
-
     if params[:code].nil?
       user = User.find(params[:id])
       if current_user == user
@@ -21,5 +20,4 @@ class UsersController < ApplicationController
     @user = User.find(params[:user_id])
     redirect_to @user
   end
-
 end

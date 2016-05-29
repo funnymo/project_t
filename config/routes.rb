@@ -10,9 +10,10 @@ Rails.application.routes.draw do
               :sign_out => "logout",
               :edit => "profile"}
 
-  resources :users, only: [:show] do
-    resources :galleries
-    resources :pictures
+  resources :users do
+    resources :premium_transactions, only: [:create]
+    resources :galleries, only: [:show]
+    resources :pictures, only: [:show]
   end
 
   resources :products
@@ -36,9 +37,4 @@ Rails.application.routes.draw do
   resources :products do
     resources :transactions, only: [:create]
   end
-
-  resources :users do
-    resources :premium_transactions, only: [:create]
-  end
-
 end

@@ -13,18 +13,24 @@
 @import "message";
 @import "product";
 @import "contact_us";
+
 @import "upgrade";
+
+@import "tabs";
+
 
 
 .avatar-small {
   width: 28px;
 }
-
 .avatar-medium {
   width: 48px;
 }
 .avatar-large {
-  width: 68px;
+  width: 75%;
+  border-radius: 50% 50%;
+  height: 200px;
+  width: 200px;
 }
 .avatar-full {
   width: 100%
@@ -53,8 +59,6 @@ hr.nav_bar {
     min-width: 100%;
     min-height: 100%;
   }
-
-
 
 .img-responsive {
   width: 100%;
