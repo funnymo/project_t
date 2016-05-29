@@ -12,8 +12,9 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
     end
 
     if auth.info.image.present?
-      avatar_url = process_uri(auth.info.image)
-      user.update_attribute(:avatar, URI.parse(avatar_url))
+      uri = URI.parse(auth.info.image)
+      uri.scheme = 'https'
+      user.update_attribute(:avatar, URI.parse(uri))
     end
   end
 
