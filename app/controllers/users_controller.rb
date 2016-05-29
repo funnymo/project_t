@@ -7,10 +7,13 @@ class UsersController < ApplicationController
       if current_user == user
         @user = User.find(current_user.id)
       else
-        redirect_to root_path, alert: "You don't have permission to do that"
+        redirect_to root_path, alert: "You don't have permission to do that."
       end
     else
       @user = User.find_by(code: params[:code])
+      if @user.nil?
+        redirect_to root_path, notice: "There are no users with that code."
+      end
     end
   end
 
