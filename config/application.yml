@@ -19,5 +19,5 @@ development:
 production:
   SENDGRID_USERNAME: "projecttrail"
   SENDGRID_PASSWORD: "trail1trail"
-  FACEBOOK_KEY:
+  FACEBOOK_KEY: 1309760222384824
   FACEBOOK_SECRET:
