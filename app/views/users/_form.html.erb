@@ -1,8 +1,8 @@
 <div class="name-field">
   <% @user = current_user %>
   <%= form_for([@user, @user.premium_transactions.new]) do |f| %>
-    <%= f.text_field :premium %>
-    <%= f.submit "Customize!" %>
+    <%= f.text_field :premium, maxlength: 15 %>
+    <%= f.submit "Customize!", class: "premium" %>
 
     <%= f.hidden_field :product_id, value: @user.id %>
     <%= f.hidden_field :price, value: '0' %>

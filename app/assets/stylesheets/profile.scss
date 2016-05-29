@@ -1,28 +1,20 @@
 .profile_background {
-    position: absolute;
-    background-color: #1E3E2B;
-    min-width: 100%;
-    min-height: 100%;
-    left: 0;
-    // animation: 1s multicolor;
-    // animation-iteration-count: infinite;
-     -webkit-animation: pulse 40s infinite alternate;
+  position: fixed;
+  background-image: url("back3.jpg");
+  z-index: -5;
+  left: 0%;
+  background-size:cover;
+  min-width: 100%;
+  min-height: 100%;
 }
-@-webkit-keyframes pulse {
-      0% {background-color: #E0482E;}
-     20% {background-color: #FBDC00;}
-     40% {background-color: #1ED0BF;}
-     60% {background-color: #58C3EC;}
-     80% {background-color: #474794;}
-     100% {background-color: #E64462;}
-}
+
 
 .center {
     align-content: center;
     text-align: center;
 }
 .user-avatar-full {
-    width: 65%;
+    width: 50%;
     border-color: slategrey;
     border: solid;
     border-width: thick;
@@ -92,6 +84,7 @@ p.profile_user_code {
 .fa-linkedin:hover{
   color:#007bb5
 }
+
 .fa-instagram:hover{
   animation: 1s multicolor;
   animation-iteration-count: infinite;
@@ -212,46 +205,24 @@ a.btn.btn-primary-profile.wide:hover {
 //
 .col-md-4.profile{
   background-color: #263645;
-  background-image: url('http://timteeling.com/dev/img/network.svg'), radial-gradient(200px 500px at center, #ff8300 0%, rgba(0,0,0,0) 50%, rgba(0,0,0,0));
-  // background-size: 125%, 50% 100%;
-  background-size: 125%, 50% 60%;
-  background-position: 0 60%, 0 100%;
-  animation: move 5s linear infinite;
 
-  // height: 300px;
-  // box-shadow: inset 0 0 25px rgba(0,0,0,.5);
   border: 2px solid #263645;
   border-right: 0;
   border-left: 0;
 
-//     border: solid;
-//     border-radius: 10px;
-//     margin-top: 7%;
-//     background-color: #283758;
-//     border-color: #283758;
-//     box-shadow: wheat;
-//     box-shadow: 0px 0px 23px rgb(0, 0, 0);
 }
 
-
+@media (max-width:600px){
+  .col-md-4.profile{
+    height: 100%;
+    position: absolute;
+  }
+}
 // testing
 
 
 
-.container.profile {
-  // background-color: #263645;
-	// background-image: url('http://timteeling.com/dev/img/network.svg'), radial-gradient(200px 500px at center, #ff8300 0%, rgba(0,0,0,0) 50%, rgba(0,0,0,0));
-	// background-size: 125%, 50% 100%;
-  // background-position: 0 60%, 0 100%;
-  // animation: move 5s linear infinite;
 
-  // /* Extra Styles */
-  // height: 300px;
-  // /*box-shadow: inset 0 0 25px rgba(0,0,0,.5);*/
-  // border: 2px solid #263645;
-  // border-right: 0;
-  // border-left: 0;
-}
 
 @keyframes move {
 	0% {

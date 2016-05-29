@@ -434,17 +434,17 @@ input[placeholder], [placeholder], *[placeholder] {
 }
 
 @media (max-width: 500px){
-  .ellipses-container {
-}
+  .ellipses__outer--thick {
+      border-width: 0px;
+    }
 
-.ellipses.ellipses__outer--thin{
+    .ellipses.ellipses__orbit {
+      border-color: transparent;
+    }
 
-}
-
-.ellipses.ellipses__outer--thick{
-
-}
-
+    .ellipses__orbit:before{
+      background-color: rgba(9, 14, 14, 0);
+    }
 }
 
 img.logo_home {
