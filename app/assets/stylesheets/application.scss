@@ -13,9 +13,10 @@
 @import "message";
 @import "product";
 @import "contact_us";
+@import "upgrade";
 
 
-.acatar-small {
+.avatar-small {
   width: 28px;
 }
 
@@ -42,6 +43,17 @@ hr.nav_bar {
   min-width: 100%;
   min-height: 100%;
 }
+
+.bkpic_edit {
+    position: fixed;
+    background-image: url("edit1.jpg");
+    z-index: -5;
+    left: 0%;
+    background-size:cover;
+    min-width: 100%;
+    min-height: 100%;
+  }
+
 
 
 .img-responsive {

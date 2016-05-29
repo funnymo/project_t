@@ -1,0 +1,113 @@
+.bkpic_premium {
+    position: fixed;
+    background-image: url("back2.jpg");
+    z-index: -5;
+    left: 0%;
+    background-size:cover;
+    min-width: 100%;
+    min-height: 100%;
+  }
+
+@media (max-width: 839px){
+
+.col-md-6.upgrade {
+  width: 80%;
+  margin-left: 10%;
+}
+
+}
+
+
+@media (min-width: 840px) {
+.col-md-6.upgrade {
+    width: 50%;
+}
+}
+
+p.upgrade_page {
+    color: black;
+    text-align: center;
+    font-family: 'Quicksand', sans-serif;
+}
+
+.row.upgrade_form {
+    text-align: center;
+}
+
+.row.main_premium {
+    margin-top: 33.333333%;
+}
+
+//input form for preimum page
+input#premium_transaction_premium {
+    text-transform: uppercase;
+    outline: none;
+    background-color: transparent;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    width: 60%;
+    margin-right: 20%;
+    margin-left: 20%;
+    color: black;
+    font: caption;
+    font-family: 'Allerta Stencil', sans-serif;
+    height: 60px;
+    text-align: center;
+    font-size: 35px;
+}
+
+@media (max-width: 600px){
+  input#premium_transaction_premium{
+    font-size: 20px;
+    width: 90%;
+    margin-right: 5%;
+    margin-left: 5%;
+  }
+}
+
+
+// submit button
+input.premium {
+    margin-top: 15px;
+    border-right-width: thin;
+    border-left-width: thin;
+    border-bottom-width: thin;
+    padding: 14px;
+    color: whitesmoke;
+    border-radius: 5px;
+}
+
+input.premium:hover {
+    color: black;
+    background-color: rgba(211, 211, 211, 0.34);
+}
+
+h2.upgrade {
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+  color: black;
+}
+
+
+
+@keyframes word_multicolor {
+  0% {
+    color: #FFE20C;
+  }
+  20% {
+    color: #DBE640;
+  }
+  40% {
+    color: #FFEB3B;
+  }
+  60% {
+    color: #FBF41E;
+  }
+  80% {
+    color: #FBFBFA;
+  }
+  100% {
+    color: #E2AD16;
+  }
+}
