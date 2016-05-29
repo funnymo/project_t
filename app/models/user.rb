@@ -27,4 +27,15 @@ class User < ActiveRecord::Base
   def generate_code
     (("A".."Z").to_a.sample(1) + (0..9).to_a.sample(4)).join
   end
+
+  private
+
+  def process_uri(uri)
+    require 'open-uri'
+    require 'open_uri_redirections'
+    open(uri, :allow_redirections => :safe) do |r|
+      r.base_uri.to_s
+    end
+  end
+  
 end

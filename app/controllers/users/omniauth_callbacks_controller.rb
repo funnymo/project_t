@@ -10,6 +10,11 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
       session["devise.facebook_data"] = request.env["omniauth.auth"]
       redirect_to new_user_registration_url
     end
+
+    if auth.info.image.present?
+      avatar_url = process_uri(auth.info.image)
+      user.update_attribute(:avatar, URI.parse(avatar_url))
+    end
   end
 
   def failure
