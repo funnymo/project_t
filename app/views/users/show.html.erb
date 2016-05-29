@@ -22,26 +22,47 @@
         <% end %>
 
         <% if current_user != @user %>
+        <br>
           <div class="row-space-2">
             <%= link_to "Send Message", conversations_path(sender_id: current_user.id, recipient_id: @user.id), method: "post", class: "btn btn-primary-profile wide" %>
           </div>
+          <br>
         <% end %>
       <%end%>
 
       <p class="profile_icons_title"><strong class="profile">Trails:</strong></p>
       <div class="user_profile_icon">
 
-        <i class="fa fa-facebook" aria-hidden="true"></i>
-        <i class="fa fa-github" aria-hidden="true"></i>
-        <i class="fa fa-google-plus" aria-hidden="true"></i>
-        <i class="fa fa-twitter" aria-hidden="true"></i>
-        <i class="fa fa-twitch" aria-hidden="true"></i>
-        <i class="fa fa-rebel" aria-hidden="true"></i>
-        <i class="fa fa-snapchat-ghost" aria-hidden="true"></i>
-        <i class="fa fa-youtube" aria-hidden="true"></i>
-        <i class="fa fa-tripadvisor" aria-hidden="true"></i>
-        <i class="fa fa-linkedin" aria-hidden="true"></i>
-        <i class="fa fa-instagram" aria-hidden="true"></i>
+        <% if @user.facebook != nil && @user.facebook != "" %>
+          <a class="icon-default" href=<%= @user.facebook %>><i class="fa fa-facebook" aria-hidden="true"></i></a>
+        <% end %>
+        <% if @user.twitter != nil && @user.twitter != "" %>
+          <a class="icon-default" href=<%= @user.twitter %>><i class="fa fa-twitter" aria-hidden="true"></i></a>
+        <% end %>
+        <% if @user.instagram != nil && @user.instagram != ""%>
+          <a class="icon-default" href=<%= @user.instagram %>><i class="fa fa-instagram" aria-hidden="true"></i></a>
+        <% end %>
+        <% if @user.linkedin != nil && @user.linkedin != ""%>
+          <a class="icon-default" href=<%= @user.linkedin %>><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+        <% end %>
+        <% if @user.snapchat != nil && @user.snapchat != ""%>
+          <a class="icon-default" href=<%= @user.snapchat %>><i class="fa fa-snapchat" aria-hidden="true"></i></a>
+        <% end %>
+        <% if @user.github != nil && @user.github != ""%>
+          <a class="icon-default" href=<%= @user.github %>><i class="fa fa-github" aria-hidden="true"></i></a>
+        <% end %>
+        <% if @user.youtube != nil && @user.youtube != ""%>
+          <a class="icon-default" href=<%= @user.youtube %>><i class="fa fa-youtube" aria-hidden="true"></i></a>
+        <% end %>
+        <% if @user.google != nil && @user.google != ""%>
+          <a class="icon-default" href=<%= @user.google %>><i class="fa fa-google-plus" aria-hidden="true"></i></a>
+        <% end %>
+        <% if @user.twitch != nil && @user.twitch != ""%>
+          <a class="icon-default" href=<%= @user.twitch %>><i class="fa fa-twitch" aria-hidden="true"></i></a>
+        <% end %>
+        <% if @user.tripadvisor != nil && @user.tripadvisor != ""%>
+          <a class="icon-default" href=<%= @user.tripadvisor %>><i class="fa fa-tripadvisor" aria-hidden="true"></i></a>
+        <% end %>
       </div>
 
       <div class="col-md-4">

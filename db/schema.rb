@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160528121023) do
+ActiveRecord::Schema.define(version: 20160529155058) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -169,6 +169,16 @@ ActiveRecord::Schema.define(version: 20160528121023) do
     t.datetime "avatar_updated_at"
     t.string   "code"
     t.boolean  "premium",                default: false
+    t.string   "facebook"
+    t.string   "github"
+    t.string   "google"
+    t.string   "twitter"
+    t.string   "twitch"
+    t.string   "snapchat"
+    t.string   "youtube"
+    t.string   "tripadvisor"
+    t.string   "linkedin"
+    t.string   "instagram"
   end
 
   add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true, using: :btree
