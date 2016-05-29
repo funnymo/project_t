@@ -152,6 +152,7 @@ GEM
     omniauth-oauth2 (1.4.0)
       oauth2 (~> 1.0)
       omniauth (~> 1.2)
+    open_uri_redirections (0.2.1)
     orm_adapter (0.5.0)
     paperclip (4.3.6)
       activemodel (>= 3.2.0)
@@ -264,6 +265,7 @@ DEPENDENCIES
   jquery-turbolinks
   mini_magick
   omniauth-facebook
+  open_uri_redirections
   paperclip
   pg
   private_pub
