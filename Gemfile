@@ -20,6 +20,7 @@ gem 'omniauth-facebook'
 
 # , group: :production
 gem 'puma'
+gem 'open_uri_redirections'
 
 # Notifications
 gem 'toastr-rails'
