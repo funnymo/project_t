@@ -16,11 +16,6 @@
 </div>
 
 
-    <!-- <%= form_tag("/search", method: "get", class:"search home") do %>
-      <%= text_field_tag :code, nil, {type: "search"} %>
-      <%= submit_tag("Search", :id=>"button", :class=>"home", :name=>"submit") %>
-    <% end %> -->
-
 
 <!-- form to search specific user code -->
 <%= form_tag "/search", method:"get", id:"code_form", class:"search home" do %>
