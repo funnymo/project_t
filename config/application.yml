@@ -11,8 +11,8 @@
 #   stripe_publishable_key: pk_live_9lcthxpSIHbGwmdO941O1XVU
 
 development:
-  FACEBOOK_KEY: ""
-  FACEBOOK_SECRET: ""
+  FACEBOOK_KEY:
+  FACEBOOK_SECRET:
   GMAIL_USERNAME_DEV: 'trailproject4@gmail.com'
   GMAIL_PASSWORD_DEV:  'projectt'
 
