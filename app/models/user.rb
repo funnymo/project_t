@@ -8,7 +8,7 @@ class User < ActiveRecord::Base
   has_many :products
   has_many :photos
   has_many :transactions
-  has_one :premium_transactions
+  has_many :premium_transactions
 
   before_create :confirmation_token
 
@@ -23,7 +23,7 @@ class User < ActiveRecord::Base
       user.avatar = auth.info.image # assuming the user model has an image
     end
   end
-  
+
   def self.new_with_session(params, session)
     super.tap do |user|
       if data = session["devise.facebook_data"] && session["devise.facebook_data"]["extra"]["raw_info"]
