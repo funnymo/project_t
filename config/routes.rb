@@ -37,7 +37,4 @@ Rails.application.routes.draw do
   resources :products do
     resources :transactions, only: [:create]
   end
-
-
-
 end

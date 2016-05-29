@@ -30,10 +30,30 @@ class RegistrationsController < Devise::RegistrationsController
   end
 
   def sign_up_params
-    params.require(:user).permit(:fullname, :email, :password, :password_confirmation, :code)
+    params.require(:user).permit(:fullname, :email, :password, :password_confirmation)
   end
 
   def account_update_params
-    params.require(:user).permit(:avatar, :fullname, :phone_number, :description, :interest, :email, :password, :password_confirmation, :code, :image => [])
+    params.require(:user).permit(
+      :avatar,
+      :fullname,
+      :phone_number,
+      :description,
+      :interest,
+      :email,
+      :password,
+      :password_confirmation,
+      :code,
+      :image,
+      :facebook,
+      :github,
+      :google,
+      :twitter,
+      :twitch,
+      :snapchat,
+      :youtube,
+      :tripadvisor,
+      :linkedin,
+      :instagram)
   end
 end
