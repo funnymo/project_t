@@ -1,5 +1,6 @@
 <div class="name-field">
   <% @user = current_user %>
+  <% byebug %>
   <%= form_for([@user, @user.premium_transactions.new]) do |f| %>
     <%= f.text_field :premium %>
     <%= f.submit "Customize!" %>
@@ -9,5 +10,3 @@
     <%= f.hidden_field :total, value: 0 %>
   <% end %>
 </div>
-
-

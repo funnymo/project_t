@@ -29,7 +29,6 @@ class User < ActiveRecord::Base
   end
 
   private
-
   def process_uri(uri)
     require 'open-uri'
     require 'open_uri_redirections'
@@ -37,5 +36,5 @@ class User < ActiveRecord::Base
       r.base_uri.to_s
     end
   end
-  
+
 end
