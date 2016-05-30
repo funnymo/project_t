@@ -15,7 +15,7 @@
               <p style="text-align: center;">
                 <%= gallery.name.truncate(14) %>
                 <%= link_to "Show", user_gallery_path(@user.id,gallery) %>
-                <%= link_to "Edit", edit_user_gallery_path(@user.id,gallery) %>
+                <!-- <%= link_to "Edit", edit_user_gallery_path(@user.id,gallery) %> -->
                 <%= link_to "Delete", user_gallery_path(@user.id, gallery),
                   :data => { :confirm => "Are you sure?" },
                   :method => :delete

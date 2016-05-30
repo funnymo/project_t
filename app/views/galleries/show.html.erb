@@ -1,58 +1,99 @@
-<div class="row">
-  <h1>Gallery</h1>
-
-  <input type="hidden" id="galleryID" value="<%= @gallery.id %>">
-
-  <p>
-    <b>Name: </b>
-    <%= @gallery.name %>
-  </p>
-
-  <p>
-    <b>Description: </b>
-    <%= @gallery.description %>
-  </p>
-
-
- 
-  <div class="form-actions">
-    <%= link_to 'Back', @user, :class => 'btn btn-mini'  %>
-    <%if @user.id == current_user.id %>
-    <%= link_to 'Edit Album', edit_user_gallery_path(current_user.id,@gallery), :class => 'btn btn-mini' %>
-    <%= link_to 'Delete Album', user_gallery_path(current_user.id,@gallery), :method => 'delete', :confirm => 'Are you sure?', :class => 'btn btn-mini' %>
-    <%end%>
-  </div>
-
-<h2>Pictures</h2>
+<div class="bkpic_gallery">
 </div>
 
-<div class="row">
-  <ul class="thumbnails files">
-<% unless @pictures.empty? %>
-  <% @pictures.each do |pic| %>
-    <li class="span3" id="picture_<%= pic.id %>">
-    <div class="thumbnail">
-      <%= image_tag pic.image.url %>
-      <div class="caption">
-        <p style="text-align: center;">
+<div class="col-md-2">
+</div>
+<div class="col-md-8">
+  <div class="row">
+    <br><br><br><br>
 
+    <% if current_user.id == @user.id%>
+      <h1>Gallery</h1>
+      <input type="hidden" id="galleryID" value="<%= @gallery.id %>">
+      <p>
+        <b>Name: </b>
+        <%= @gallery.name %>
+      </p>
+
+      <p>
+        <b>Description: </b>
+        <%= @gallery.description %>
+      </p>
+
+      <div class="form-actions">
+        <%= link_to 'Back', @user, :class => 'btn btn-mini'  %>
         <%if @user.id == current_user.id %>
-        <%= link_to "Edit picture", edit_user_picture_path(@user.id,pic) %>
-
-        <%=
-          link_to "Delete picture", user_picture_path(@user.id,pic),
-            :data => { :confirm => "Are you sure?" },
-            :method => :delete
-          %>
+          <%= link_to 'Edit Album', edit_user_gallery_path(current_user.id,@gallery), :class => 'btn btn-mini' %>
+          <%= link_to 'Delete Album', user_gallery_path(current_user.id,@gallery), :method => 'delete', :confirm => 'Are you sure?', :class => 'btn btn-mini' %>
         <%end%>
+      </div>
+    <% end%>
 
-        </p>
+
+    <h1 class="gallery">Pictures</h1>
+    </div>
+
+    <div class="row">
+      <div id="photos">
+        <ul id="photo-gallery">
+          <% unless @pictures.empty? %>
+            <% @pictures.each do |pic| %>
+              <div class="col-lg-6">
+              <li>
+                <a href=<%= pic.image.url %>>
+                  <img src=<%= pic.image.url %>>
+                </a>
+              </li>
+              <%if @user.id == current_user.id %>
+                <!-- <div class="caption"> -->
+                  <p style="text-align: center;">
+                    <%= link_to "Edit picture", edit_user_picture_path(@user.id,pic) %>
+                  <%=
+                    link_to "Delete picture", user_picture_path(@user.id,pic),
+                    :data => { :confirm => "Are you sure?" },
+                    :method => :delete
+                  %>
+                <%end%>
+                <!-- </div> -->
+                </p>
+              </div>
+            <%end%>
+          <%end%>
+        </ul>
       </div>
     </div>
-    </li>
-  <% end %>
-<% end %>
-</ul>
+
+</div>
+
+<div class="col-md-2">
 </div>
 
 
+
+
+<script>
+var $overlay = $('<div id="overlay"></div>');
+var $image = $("<img>");
+
+//An image to overlay
+$overlay.append($image);
+
+//Add overlay
+$(".container").append($overlay);
+
+  //click the image and a scaled version of the full size image will appear
+  $("#photo-gallery a").click( function(event) {
+    event.preventDefault();
+    var imageLocation = $(this).attr("href");
+
+    //update overlay with the image linked in the link
+    $image.attr("src", imageLocation);
+
+    //show the overlay
+    $overlay.show();
+  } );
+
+  $("#overlay").click(function() {
+    $( "#overlay" ).hide();
+  });
+</script>

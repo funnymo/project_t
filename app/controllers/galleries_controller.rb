@@ -99,7 +99,7 @@ class GalleriesController < ApplicationController
 
   private
 
-  def userid 
+  def userid
     @user = User.find(params[:user_id])
   end
 

@@ -12,9 +12,11 @@ Rails.application.routes.draw do
 
   resources :users do
     resources :premium_transactions, only: [:create]
-    resources :galleries, only: [:show]
-    resources :pictures, only: [:show]
+    resources :galleries, only: [:show, :edit, :update]
+    resources :pictures, only: [:show, :edit, :update, :delete]
   end
+
+
 
   resources :products
   resources :product_photos
