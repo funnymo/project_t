@@ -31,6 +31,7 @@ textarea#user_interest, input#user_edit_new_password,
 @media (min-width: 768px){
 .tab-list {
     border-bottom: 1px solid rgba(221, 221, 221, 0) !important;
+    width: 100%;
 }
 
 .tab-list li.active-tab {
