@@ -17,9 +17,6 @@ Rails.application.routes.draw do
     resources :pictures
   end
 
-
-
-
   resources :products
   resources :product_photos
 
@@ -33,19 +30,13 @@ Rails.application.routes.draw do
   post '/notify' => 'transactions#notify'
   post '/notifypremium' => 'premium_transactions#notifypremium'
 
-
   resources :conversations, only: [:index, :create] do
     resources :messages, only: [:index, :create]
   end
-
 
   resources :products do
     resources :transactions, only: [:create]
   end
 
-  resources :users do
-    resources :premium_transactions, only: [:create]
-    resources :galleries, only: [:show]
-    resources :pictures, only: [:show]
-  end
+
 end
