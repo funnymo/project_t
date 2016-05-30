@@ -13,8 +13,8 @@ Rails.application.routes.draw do
 
   resources :users do
     resources :premium_transactions, only: [:create]
-    resources :galleries, only: [:show, :edit, :update]
-    resources :pictures, only: [:show, :edit, :update, :delete]
+    resources :galleries
+    resources :pictures
   end
 
 
@@ -43,9 +43,5 @@ Rails.application.routes.draw do
     resources :transactions, only: [:create]
   end
 
-  resources :users do
-    resources :premium_transactions, only: [:create]
-    resources :galleries, only: [:show]
-    resources :pictures, only: [:show]
-  end
+
 end
