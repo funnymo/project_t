@@ -18,3 +18,43 @@ textarea#user_interest, input#user_edit_new_password,
     border-right: none;
         width: 100%;
 }
+
+
+// .tab-list li {
+//     background: rgba(69, 76, 73, 0.13) !important;
+// }
+//
+@media (min-width: 768px){
+.tab-list {
+    border-bottom: 1px solid rgba(221, 221, 221, 0) !important;
+}
+
+.tab-list li.active-tab {
+    background: rgb(218, 108, 13) !important;
+    color: white;
+    border-bottom-color: #fff;
+}
+
+}
+
+li#tablist1-tab1 input:focus{
+    outline: none;
+    border: none;
+}
+
+
+
+
+
+
+  .tab-list li {
+    background: #fff;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+  }
+
+
+.tab-list li.active-tab {
+    background: #fff;
+    border-bottom-color: #fff;
+}

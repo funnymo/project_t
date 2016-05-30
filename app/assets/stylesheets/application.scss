@@ -52,13 +52,24 @@ hr.nav_bar {
 
 .bkpic_edit {
     position: fixed;
-    background-image: url("edit1.jpg");
+    // background-image: url("edit1.jpg");
     z-index: -5;
     left: 0%;
     background-size:cover;
     min-width: 100%;
     min-height: 100%;
   }
+
+  .bkpic_message{
+    position: fixed;
+    background-image: url('back11.jpg');
+    z-index:-5;
+    left:0%;
+    background-size:cover;
+    min-width: 100%;
+    min-height: 100%;
+  }
+
 
 .img-responsive {
   width: 100%;

@@ -3,12 +3,6 @@
 }
 
 
-.panel-heading.conversation {
-    background-color: cornflowerblue;
-    color: azure;
-}
-
-
 @media (max-width: 991px) {
   .col-md-8 {
       width: 100%;
@@ -17,7 +11,8 @@
 
 
 .panel-heading.conversation {
-    background-color: #f85c37;
+  background-color: #F5F5F5;
+border-color: cadetblue;
     color: #072F2F;
     text-align: center;
     font-family: monospace;
@@ -29,7 +24,7 @@
 }
 
 .row.conversation.message:hover {
-    background-color: #FFD9BF;
+    background-color: #C3D8C9;
 }
 
 .row.conversation.message {
