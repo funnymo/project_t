@@ -1,6 +1,6 @@
 .profile_background {
   position: fixed;
-  background-image: url("back3.jpg");
+  background-image: url("back10.jpg");
   z-index: -5;
   left: 0%;
   background-size:cover;
@@ -161,14 +161,9 @@ p.profile_user_code {
 
 @media (min-width: 600px){
 .col-md-4 {
-    width: 33.33333333333333%;
-}
-}
-@media (min-width: 600px){
- .col-md-4{
     float: left;
+    width: 33.33333333333333%;
   }
-
 
   .col-md-4.profile{
       border: solid;
@@ -213,13 +208,16 @@ a.btn.btn-primary-profile.wide:hover {
 }
 
 @media (max-width:600px){
-  .col-md-4.profile{
-    height: 100%;
-    position: absolute;
+  .col-md-4.profile {
+      height: 100%;
+      position: absolute;
+      width: 90%;
+      margin-left: 10%;
+      background: none;
   }
 }
-// testing
 
+// testing
 
 
 
@@ -237,4 +235,3 @@ a.btn.btn-primary-profile.wide:hover {
   text-decoration: none;
   color: slategrey;
   }
-

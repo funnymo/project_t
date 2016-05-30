@@ -17,6 +17,7 @@ input#user_email {
     border-top: none;
     border-left: none;
     border-right: none;
+    color: black;
     width: 100;
     width: 250px;
 }
@@ -30,14 +31,15 @@ input#user_password {
     border-right: none;
     width: 100;
     width: 250px;
+    color: black;
 }
 
 input[type="submit"] {
     color: #8C8988;
     background: transparent;
     border: solid;
-    border-bottom-width: medium;
-    border-left-width: medium;
+    border-bottom-width: thin;
+    border-left-width: thin;
     border-right-width: thin;
     border-top-width: thin;
 }

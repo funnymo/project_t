@@ -11,6 +11,14 @@ Rails.application.routes.draw do
               :edit => "profile"}
 
 
+  resources :users do
+    resources :premium_transactions, only: [:create]
+    resources :galleries, only: [:show, :edit, :update]
+    resources :pictures, only: [:show, :edit, :update, :delete]
+  end
+
+
+
 
   resources :products
   resources :product_photos
