@@ -10,11 +10,7 @@ Rails.application.routes.draw do
               :sign_out => "logout",
               :edit => "profile"}
 
-  resources :users do
-    resources :premium_transactions, only: [:create]
-    resources :galleries, only: [:show]
-    resources :pictures, only: [:show]
-  end
+
 
   resources :products
   resources :product_photos
@@ -24,17 +20,24 @@ Rails.application.routes.draw do
   get "/about_us" => "pages#about_us"
   get "/trail_upgrade" => "pages#upgrade"
   get "/contact_us" => "pages#contact_us"
-
-  resources :conversations, only: [:index, :create] do
-    resources :messages, only: [:index, :create]
-  end
-
   get '/search', to: 'users#show'
   get "/premium" => "premium_transactions#create"
   post '/notify' => 'transactions#notify'
   post '/notifypremium' => 'premium_transactions#notifypremium'
 
+
+  resources :conversations, only: [:index, :create] do
+    resources :messages, only: [:index, :create]
+  end
+
+
   resources :products do
     resources :transactions, only: [:create]
+  end
+
+  resources :users do
+    resources :premium_transactions, only: [:create]
+    resources :galleries, only: [:show]
+    resources :pictures, only: [:show]
   end
 end
