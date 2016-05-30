@@ -31,7 +31,6 @@ class TransactionsController < ApplicationController
   protect_from_forgery except: [:notify]
   def notify
     params.permit!
-    byebug
     status = params[:payment_status]
     transaction = Transaction.find(params[:item_number])
     if status == "Completed"

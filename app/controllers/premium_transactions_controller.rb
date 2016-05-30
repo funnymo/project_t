@@ -3,7 +3,6 @@ class PremiumTransactionsController < ApplicationController
 
   def create
     @user = current_user
-    byebug
     @transaction = @user.premium_transactions.create(transaction_params)
     if @transaction
       values = {
@@ -27,7 +26,6 @@ class PremiumTransactionsController < ApplicationController
   protect_from_forgery except: [:notifypremium]
   def notifypremium
     params.permit!
-    byebug
     status = params[:payment_status]
     transaction = PremiumTransaction.find(params[:item_number])
     if status == "Completed"
