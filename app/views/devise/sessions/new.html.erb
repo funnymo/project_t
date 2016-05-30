@@ -5,7 +5,7 @@
   <div class="col-lg-4">
     <div class="log_in_div">
 
-      <h2 class="log_in">Log in</h2>
+      <h2 class="log_in">Sign Up</h2><br>
       <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
         <%= render 'shared/devisenotify' %>
 
@@ -15,7 +15,7 @@
         <br>
         <div class="field">
           <%= f.password_field :password, autocomplete: "off",:class => "form-control", placeholder: "Password" %>
-        </div>
+        </div><br>
 
         <% if devise_mapping.rememberable? -%>
           <div class="field">
@@ -25,13 +25,13 @@
         <br>
 
         <div class="actions">
-          <%= f.submit "Log in", :class => "btn btn-primary"%>
+          <%= f.submit "Log in", :class => "btn btn-primary"%> <br><br>
           <%= link_to "Forgot Password", new_user_password_path %>
         </div>
         <br>
-
+<!--
         <%= link_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook) %>
-
+ -->
       <% end %>
     </div>
   </div>
