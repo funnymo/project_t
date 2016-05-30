@@ -15,7 +15,7 @@ class PremiumTransactionsController < ApplicationController
         item_number: @transaction.id,
         item_price: '0',
         quantity: '1',
-        return: 'http://projecttrail.herokuapp.com/'
+        return: 'http://projecttrail.herokuapp.com'
       }
       redirect_to "https://www.sandbox.paypal.com/cgi-bin/webscr?" + values.to_query
     else

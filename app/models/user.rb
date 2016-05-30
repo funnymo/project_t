@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
-       :recoverable, :rememberable, :trackable, :validatable, :confirmable
+       :recoverable, :rememberable, :trackable, :validatable
   devise :omniauthable, :omniauth_providers => [:facebook]
   validates :fullname, presence: true, length: {maximum: 50}
 
@@ -10,7 +10,7 @@ class User < ActiveRecord::Base
   has_many :transactions
   has_many :premium_transactions
 
-  before_create :confirmation_token
+  # before_create :confirmation_token
 
   has_attached_file :avatar, styles: { medium: "300x300>", thumb: "50x50#", profile: '200x200>' }, default_url: nil
   validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\Z/
